@@ -1,0 +1,409 @@
+/* style.css - Academic Research Paper Theme */
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    --bg-paper: #fcfbf9; /* Warm ivory paper color */
+    --text-color: #1a1a1a; /* Charcoal black */
+    --border-color: #333333;
+    --border-light: #e2e8f0;
+    --primary-color: #000000;
+    --accent-color: #1d4ed8; /* Academic blue for links */
+    --font-serif: 'Lora', Georgia, 'Times New Roman', Times, serif;
+    --font-mono: 'JetBrains Mono', 'Courier New', Courier, monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f1efe9; /* Desk background */
+    color: var(--text-color);
+    font-family: var(--font-serif);
+    line-height: 1.65;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* Paper container replicating a physical journal page */
+.paper {
+    background-color: var(--bg-paper);
+    max-width: 900px;
+    width: 100%;
+    padding: 4.5rem 5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+    border-radius: 2px;
+    border: 1px solid #d4d4d8;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+    .paper {
+        padding: 2rem 1.5rem;
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+    }
+}
+
+/* Title & Authors block */
+header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+h1 {
+    font-size: 2.1rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.01em;
+}
+
+.authors {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.affiliation {
+    font-size: 0.9rem;
+    color: #4b5563;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.meta-info {
+    font-size: 0.85rem;
+    color: #4b5563;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+    padding: 0.5rem 0;
+    margin-bottom: 2rem;
+}
+
+/* Abstract block */
+.abstract-box {
+    margin: 0 auto 2.5rem auto;
+    max-width: 780px;
+    font-size: 0.92rem;
+    text-align: justify;
+}
+
+.abstract-title {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.abstract-text {
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* Headings */
+h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    border-bottom: 1.5px solid var(--primary-color);
+    padding-bottom: 0.25rem;
+    margin-top: 2.25rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-size: 1.15rem;
+    letter-spacing: 0.04em;
+}
+
+h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+p {
+    margin-bottom: 1.25rem;
+    text-align: justify;
+    text-indent: 1.5em; /* Traditional indenting for paragraphs */
+}
+
+/* Disable indent on first paragraph after heading */
+h2 + p, h3 + p, .abstract-box + p, .equation + p, .figure + p, .table-container + p {
+    text-indent: 0;
+}
+
+/* Math block equations */
+.equation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5rem 0;
+    padding: 0 1rem;
+    font-size: 1rem;
+    overflow-x: auto;
+}
+
+.eq-content {
+    flex: 1;
+    text-align: center;
+}
+
+.eq-number {
+    font-family: var(--font-serif);
+    margin-left: 1rem;
+    font-weight: 500;
+}
+
+/* Video / Image Figures */
+.figure {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.media-container {
+    background: #fdfdfd;
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    padding: 0.75rem;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.figure video, .figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 2px;
+    display: block;
+    margin: 0 auto;
+}
+
+.figure-caption {
+    margin-top: 0.75rem;
+    font-size: 0.88rem;
+    color: #374151;
+    text-align: justify;
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+}
+
+.figure-caption strong {
+    font-weight: 700;
+}
+
+/* Side-by-Side media grid */
+.figure-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+@media (max-width: 640px) {
+    .figure-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Traditional Academic Three-Line Table */
+.table-container {
+    margin: 2rem 0;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.academic-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 780px;
+}
+
+/* Double border on top, single on bottom of headers, single on bottom of body */
+.academic-table {
+    border-top: 2px solid var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.academic-table th {
+    border-bottom: 1px solid var(--primary-color);
+    padding: 0.65rem 0.75rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+.academic-table td {
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+}
+
+.academic-table tr.header-unit th {
+    font-weight: 500;
+    font-style: italic;
+    border-bottom: 1px solid var(--primary-color);
+    padding-top: 0;
+}
+
+.academic-table caption {
+    caption-side: top;
+    text-align: justify;
+    font-size: 0.88rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+}
+
+.academic-table caption strong {
+    font-weight: 700;
+}
+
+/* YouTube Embed container */
+.video-embed-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 780px;
+    margin: 1.5rem auto;
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    box-shadow: var(--shadow-sm);
+}
+
+.video-embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Reference section */
+.references-list {
+    margin-top: 1.5rem;
+    list-style-type: none;
+}
+
+.references-list li {
+    font-size: 0.88rem;
+    text-indent: -2em;
+    padding-left: 2em;
+    margin-bottom: 0.75rem;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+/* Interactive Null-space selection widget */
+.interactive-widget-box {
+    border: 1.5px solid var(--primary-color);
+    background-color: #faf9f6;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 4px;
+}
+
+.widget-title {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.alpha-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.alpha-btn {
+    font-family: var(--font-serif);
+    padding: 0.4rem 1rem;
+    background: white;
+    border: 1px solid #cbd5e1;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.alpha-btn:hover {
+    background-color: #f1f5f9;
+    border-color: var(--primary-color);
+}
+
+.alpha-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.widget-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .widget-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+.widget-video-wrapper {
+    background: black;
+    border: 1px solid var(--border-color);
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+.widget-video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.widget-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.widget-details h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.widget-details p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    text-indent: 0;
+    margin-bottom: 1rem;
+}
+
+.widget-metric {
+    font-size: 0.88rem;
+    font-family: var(--font-mono);
+    background-color: #f1efe9;
+    padding: 0.5rem 0.75rem;
+    border-radius: 2px;
+    border-left: 3px solid var(--primary-color);
+}
