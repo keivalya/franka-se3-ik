@@ -33,6 +33,9 @@
                 Khoury College of Computer Science<br>
                 Northeastern University, Boston, MA 02115
             </div>
+            <div style="text-align: center; margin-top: 0.5rem; font-size: 0.9rem; font-family: var(--font-mono);">
+                Codebase: <a href="https://github.com/keivalya/me5250-project-2" target="_blank">github.com/keivalya/me5250-project-2</a>
+            </div>
         </header>
 
         <!-- Abstract Section -->
@@ -487,6 +490,12 @@
         <h2>7. Conclusion</h2>
         <p>
             We implemented a complete SE(3) Newton-Raphson inverse kinematics solver for the 7-DOF Franka Emika Panda, verified analytical forward kinematics to machine precision, and resolved kinematic redundancy for joint-limit avoidance. Nullspace projection with a centering gain of $\alpha = 0.10$ maintains sub-micron tracking accuracy while keeping joint angles centered. Near kinematic singularities, a Damped Least Squares (DLS) formulation stabilizes the solver, regularizing velocities at singular waypoints.
+        </p>
+
+        <!-- Code Availability -->
+        <h2 style="font-size: 1.1rem; border: none; text-transform: none; margin-top: 2rem;">Data and Code Availability</h2>
+        <p style="text-indent: 0; font-size: 0.95rem;">
+            The complete kinematics code, optimization algorithms, and MuJoCo simulation scripts are open-source and hosted in the GitHub repository at <a href="https://github.com/keivalya/me5250-project-2" target="_blank">https://github.com/keivalya/me5250-project-2</a>.
         </p>
 
         <!-- Section 8: References -->
