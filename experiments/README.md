@@ -1,10 +1,10 @@
-# ME5250 Project 2 &mdash; Trajectory Simulation & Kinematic Reproductions
+# Franka Panda Inverse Kinematics &mdash; Trajectory Simulation & Kinematic Reproductions
 
 This directory contains the independent, reproducible Python source code for the inverse kinematics simulation experiments, mathematical charts, and data extractions for the 7-DOF Franka Emika Panda robot.
 
 ---
 
-## 🛠️ Installation & Setup
+## Installation & Setup
 
 Ensure you have Python 3 installed. Install the required numerical and simulation packages:
 
@@ -16,7 +16,7 @@ The robot's physical model is loaded from the local [mujoco_menagerie](./mujoco_
 
 ---
 
-## 🚀 Running the Experiments
+## Running the Experiments
 
 ### 1. Run tracking simulation & print numerical summary:
 ```bash
